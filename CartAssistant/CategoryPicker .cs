@@ -6,15 +6,13 @@ namespace CartAssistant
 {
     public class CategoryPicker
     {
-        static readonly string itemRegex = @"^[1-5]$";
-        static readonly string quantityRegex = @"^[1-9]\d*$";
         public static ICartManager operations = new CartManager();
         public static IList<CartItem> itemsInCart = operations.GetList();
         public static void Electronics()
         {
             MenuDisplay.ShowElectronicsMenu();
             string item = Console.ReadLine();
-            if ((!UserInputValidator.ValidateUserInput(item, itemRegex)))
+            if ((!UserInputValidator.ValidateUserInput(item, @"^[1-5]$")))
             {
                 Console.WriteLine("Invalid Input. Please enter a valid numeric value from 1 to 5.\n");
                 return;
@@ -38,7 +36,7 @@ namespace CartAssistant
 
             Console.WriteLine("Which is the amount you want to add?");
             string quantity = Console.ReadLine();
-            if ((!UserInputValidator.ValidateUserInput(quantity, quantityRegex)))
+            if ((!UserInputValidator.ValidateUserInput(quantity, @"^[1-9]\d*$")))
             {
                 Console.WriteLine("Invalid Input. Please enter a valid numeric value.\n");
                 return;
@@ -68,7 +66,7 @@ namespace CartAssistant
         {
             MenuDisplay.ShowHomeMenu();
             string item = Console.ReadLine();
-            if ((!UserInputValidator.ValidateUserInput(item, itemRegex)))
+            if ((!UserInputValidator.ValidateUserInput(item, @"^[1-5]$")))
             {
                 Console.WriteLine("Invalid Input. Please enter a valid numeric value from 1 to 5.\n");
                 return;
@@ -92,7 +90,7 @@ namespace CartAssistant
 
             Console.WriteLine("Which is the amount you want to add?");
             string quantity = Console.ReadLine();
-            if ((!UserInputValidator.ValidateUserInput(quantity, quantityRegex)))
+            if ((!UserInputValidator.ValidateUserInput(quantity, @"^[1-9]\d*$")))
             {
                 Console.WriteLine("Invalid Input. Please enter a valid numeric value.\n");
                 return;
@@ -122,7 +120,7 @@ namespace CartAssistant
         {
             MenuDisplay.ShowClothingMenu();
             string item = Console.ReadLine();
-            if ((!UserInputValidator.ValidateUserInput(item, itemRegex)))
+            if ((!UserInputValidator.ValidateUserInput(item, @"^[1-5]$")))
             {
                 Console.WriteLine("Invalid Input. Please enter a valid numeric value from 1 to 5.\n");
                 return;
@@ -146,7 +144,7 @@ namespace CartAssistant
 
             Console.WriteLine("Which is the amount you want to add?");
             string quantity = Console.ReadLine();
-            if ((!UserInputValidator.ValidateUserInput(quantity, quantityRegex)))
+            if ((!UserInputValidator.ValidateUserInput(quantity, @"^[1-9]\d*$")))
             {
                 Console.WriteLine("Invalid Input. Please enter a valid numeric value.\n");
                 return;
@@ -177,7 +175,7 @@ namespace CartAssistant
         {
             MenuDisplay.ShowSportsMenu();
             string item = Console.ReadLine();
-            if ((!UserInputValidator.ValidateUserInput(item, itemRegex)))
+            if ((!UserInputValidator.ValidateUserInput(item, @"^[1-5]$")))
             {
                 Console.WriteLine("Invalid Input. Please enter a valid numeric value from 1 to 5.\n");
                 return;
@@ -201,7 +199,7 @@ namespace CartAssistant
 
             Console.WriteLine("Which is the amount you want to add?");
             string quantity = Console.ReadLine();
-            if ((!UserInputValidator.ValidateUserInput(quantity, quantityRegex)))
+            if ((!UserInputValidator.ValidateUserInput(quantity, @"^[1-9]\d*$")))
             {
                 Console.WriteLine("Invalid Input. Please enter a valid numeric value.\n");
                 return;
@@ -231,7 +229,7 @@ namespace CartAssistant
         {
             MenuDisplay.ShowKitchenMenu();
             string item = Console.ReadLine();
-            if ((!UserInputValidator.ValidateUserInput(item, itemRegex)))
+            if ((!UserInputValidator.ValidateUserInput(item, @"^[1-5]$")))
             {
                 Console.WriteLine("Invalid Input. Please enter a valid numeric value from 1 to 5.\n");
                 return;
@@ -255,7 +253,7 @@ namespace CartAssistant
 
             Console.WriteLine("Which is the amount you want to add?");
             string quantity = Console.ReadLine();
-            if ((!UserInputValidator.ValidateUserInput(quantity, quantityRegex)))
+            if ((!UserInputValidator.ValidateUserInput(quantity, @"^[1-9]\d*$")))
             {
                 Console.WriteLine("Invalid Input. Please enter a valid numeric value.\n");
                 return;
@@ -285,7 +283,7 @@ namespace CartAssistant
         {
             MenuDisplay.ShowFoodMenu();
             string item = Console.ReadLine();
-            if ((!UserInputValidator.ValidateUserInput(item, itemRegex)))
+            if ((!UserInputValidator.ValidateUserInput(item, @"^[1-5]$")))
             {
                 Console.WriteLine("Invalid Input. Please enter a valid numeric value from 1 to 5.\n");
                 return;
@@ -309,7 +307,7 @@ namespace CartAssistant
 
             Console.WriteLine("Which is the amount you want to add?");
             string quantity = Console.ReadLine();
-            if ((!UserInputValidator.ValidateUserInput(quantity, quantityRegex)))
+            if ((!UserInputValidator.ValidateUserInput(quantity, @"^[1-9]\d*$")))
             {
                 Console.WriteLine("Invalid Input. Please enter a valid numeric value.\n");
                 return;
