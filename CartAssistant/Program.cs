@@ -140,7 +140,7 @@ namespace CartAssistant
 
                 var updatedItem = CategoryPicker.itemsInCart[int.Parse(index) - 1];
                 CategoryPicker.operations.Edit(int.Parse(index) - 1, int.Parse(quantity));
-                Console.WriteLine($"Operation Succeeded: The item {updatedItem.Name} in your cart has been successfully updted to a new amount of {quantity}.");
+                Console.WriteLine($"Operation Succeeded: The item {updatedItem.Name} in your cart has been successfully updated to a new amount of {quantity}.");
             }
 
             if (input == "2")
