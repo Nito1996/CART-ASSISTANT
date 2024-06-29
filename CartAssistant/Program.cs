@@ -95,6 +95,8 @@ namespace CartAssistant
                 $"{CategoryPicker.itemsInCart[i].Name}.");
             }
             Console.WriteLine("----------------------------------------------");
+
+            if (CategoryPicker.itemsInCart.Count == 0) Console.WriteLine("Nothing has been picked up yet, cart is empty.");
         }
         public static void HandleCartManage()
         {
@@ -105,9 +107,21 @@ namespace CartAssistant
                 Console.WriteLine("\nInvalid Input. Please enter a valid numeric value.");
                 return;
             }
+
+            MenuManagment option = Enum.Parse<MenuManagment>(input);
             HandleCartDisplay();
 
-            if (input == "1")
+            switch (option)
+            {
+                case MenuManagment.Edit:
+                    HandleEdit();
+                    break;
+                case MenuManagment.Remove:
+                    HandleRemove();
+                    break;
+            }
+
+            void HandleEdit()
             {
                 if (CategoryPicker.itemsInCart.Count == 0)
                 {
@@ -138,12 +152,12 @@ namespace CartAssistant
                     return;
                 }
 
-                var updatedItem = CategoryPicker.itemsInCart[int.Parse(index) - 1];
-                CategoryPicker.operations.Edit(int.Parse(index) - 1, int.Parse(quantity));
+                var updatedItem = CategoryPicker.itemsInCart[userChoice - 1];
+                CategoryPicker.operations.Edit(userChoice - 1, int.Parse(quantity));
                 Console.WriteLine($"Operation Succeeded: The item {updatedItem.Name} in your cart has been successfully updated to a new amount of {quantity}.");
             }
 
-            if (input == "2")
+            void HandleRemove()
             {
                 if (CategoryPicker.itemsInCart.Count == 0)
                 {
@@ -152,22 +166,22 @@ namespace CartAssistant
                 }
 
                 Console.WriteLine("\nWhich item would you like to remove?");
-                string userInput = Console.ReadLine();
-                if ((!UserInputValidator.ValidateUserInput(userInput, @"^[1-9]\d*$")))
+                string index = Console.ReadLine();
+                if ((!UserInputValidator.ValidateUserInput(index, @"^[1-9]\d*$")))
                 {
                     Console.WriteLine("\nInvalid Input. Please enter a valid numeric value.");
                     return;
                 }
 
-                var userChoice = int.Parse(userInput);
+                var userChoice = int.Parse(index);
                 if (userChoice <= 0 || userChoice > CategoryPicker.itemsInCart.Count)
                 {
                     Console.WriteLine("\nInvalid Input. That item doesn't exist in this Matrix");
                     return;
                 }
 
-                var removedItem = CategoryPicker.itemsInCart[int.Parse(userInput) - 1];
-                CategoryPicker.operations.Remove(int.Parse(userInput) - 1);
+                var removedItem = CategoryPicker.itemsInCart[userChoice - 1];
+                CategoryPicker.operations.Remove(userChoice - 1);
                 Console.WriteLine($"Operation Succeeded: {removedItem.Quantity} {removedItem.Name} has been successfully removed.");
             }
         }

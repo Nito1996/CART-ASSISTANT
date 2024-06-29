@@ -60,7 +60,8 @@ namespace CartAssistant
                     operations.Add(option.ToString(), int.Parse(quantity));
                     break;
             }
-            Console.WriteLine($"\nOperation Succeeded: You've got the amount of {quantity} {option} successfully added to your ShopCart.");
+            Console.WriteLine($"\nOperation Succeeded: You've got the total amount in your ShopCart of " +
+            $"{itemsInCart.FirstOrDefault(item => item.Name == option.ToString()).Quantity} {option} successfully added to your ShopCart.");
         }
         public static void Home()
         {
@@ -114,7 +115,8 @@ namespace CartAssistant
                     operations.Add(option.ToString(), int.Parse(quantity));
                     break;
             }
-            Console.WriteLine($"\nOperation Succeeded: You've got the amount of {quantity} {option} successfully added to your ShopCart.");
+            Console.WriteLine($"\nOperation Succeeded: You've got the total amount in your ShopCart of " +
+            $"{itemsInCart.FirstOrDefault(item => item.Name == option.ToString()).Quantity} {option} successfully added to your ShopCart.");
         }
         public static void Clothing()
         {
@@ -169,7 +171,8 @@ namespace CartAssistant
                     operations.Add(option.ToString(), int.Parse(quantity));
                     break;
             }
-            Console.WriteLine($"\nOperation Succeeded: You've got the amount of {quantity} {option} successfully added to your ShopCart.");
+            Console.WriteLine($"\nOperation Succeeded: You've got the total amount in your ShopCart of " +
+            $"{itemsInCart.FirstOrDefault(item => item.Name == option.ToString()).Quantity} {option} successfully added to your ShopCart.");
         }
         public static void Sports()
         {
@@ -223,7 +226,8 @@ namespace CartAssistant
                     operations.Add(option.ToString(), int.Parse(quantity));
                     break;
             }
-            Console.WriteLine($"\nOperation Succeeded: You've got the amount of {quantity} {option} successfully added to your ShopCart.");
+            Console.WriteLine($"\nOperation Succeeded: You've got the total amount in your ShopCart of " +
+            $"{itemsInCart.FirstOrDefault(item => item.Name == option.ToString()).Quantity} {option} successfully added to your ShopCart.");
         }
         public static void Kitchen()
         {
@@ -277,7 +281,8 @@ namespace CartAssistant
                     operations.Add(option.ToString(), int.Parse(quantity));
                     break;
             }
-            Console.WriteLine($"\nOperation Succeeded: You've got the amount of {quantity} {option} successfully added to your ShopCart.");
+            Console.WriteLine($"\nOperation Succeeded: You've got the total amount in your ShopCart of " +
+            $"{itemsInCart.FirstOrDefault(item => item.Name == option.ToString()).Quantity} {option} successfully added to your ShopCart.");
         }
         public static void Food()
         {
@@ -332,7 +337,8 @@ namespace CartAssistant
                     break;
 
             }
-            Console.WriteLine($"\nOperation Succeeded: You've got the amount of {quantity} {option} successfully added over your ShopCart.");
+            Console.WriteLine($"\nOperation Succeeded: You've got the total amount in your ShopCart of " +
+            $"{itemsInCart.FirstOrDefault(item => item.Name == option.ToString()).Quantity} {option} successfully added to your ShopCart.");
         }
     }
 }

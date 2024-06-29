@@ -15,7 +15,7 @@ namespace CartAssistant
         public IList<CartItem> itemsInCart = new List<CartItem>();
         public void Add(string name, int quantity)
         {
-            if (itemsInCart.FirstOrDefault(CartItem => CartItem.Name == name) != null)
+            if (itemsInCart.Select(item => item.Name).Contains(name))
             {
                 itemsInCart.FirstOrDefault(CartItem => CartItem.Name == name).Quantity += quantity;
                 return;
