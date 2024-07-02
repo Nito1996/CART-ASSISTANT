@@ -20,7 +20,7 @@ namespace CartAssistant
 
             ElectronicItem option = Enum.Parse<ElectronicItem>(item);
 
-            if (itemsInCart?.Any(i => i.Name == option.ToString() && i.Quantity > 0) ?? false)
+            if (itemsInCart?.Any(i => i.Name == option.ToString()) ?? false)
             {
                 string input;
                 do
@@ -75,7 +75,7 @@ namespace CartAssistant
 
             HomeItem option = Enum.Parse<HomeItem>(item);
 
-            if (itemsInCart?.Any(i => i.Name == option.ToString() && i.Quantity > 0) ?? false)
+            if (itemsInCart?.Any(i => i.Name == option.ToString()) ?? false)
             {
                 string input;
                 do
@@ -130,7 +130,7 @@ namespace CartAssistant
 
             ClothingItem option = Enum.Parse<ClothingItem>(item);
 
-            if (itemsInCart?.Any(i => i.Name == option.ToString() && i.Quantity > 0) ?? false)
+            if (itemsInCart?.Any(i => i.Name == option.ToString()) ?? false)
             {
                 string input;
                 do
@@ -186,7 +186,7 @@ namespace CartAssistant
 
             SportsItem option = Enum.Parse<SportsItem>(item);
 
-            if (itemsInCart?.Any(i => i.Name == option.ToString() && i.Quantity > 0) ?? false)
+            if (itemsInCart?.Any(i => i.Name == option.ToString()) ?? false)
             {
                 string input;
                 do
@@ -241,7 +241,7 @@ namespace CartAssistant
 
             KitchenItem option = Enum.Parse<KitchenItem>(item);
 
-            if (itemsInCart?.Any(i => i.Name == option.ToString() && i.Quantity > 0) ?? false)
+            if (itemsInCart?.Any(i => i.Name == option.ToString()) ?? false)
             {
                 string input;
                 do
@@ -296,7 +296,7 @@ namespace CartAssistant
 
             FoodItem option = Enum.Parse<FoodItem>(item);
 
-            if (itemsInCart?.Any(i => i.Name == option.ToString() && i.Quantity > 0) ?? false)
+            if (itemsInCart?.Any(i => i.Name == option.ToString()) ?? false)
             {
                 string input;
                 do
