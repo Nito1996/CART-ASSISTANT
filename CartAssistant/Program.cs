@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CartAssistant
 {
@@ -64,27 +65,17 @@ namespace CartAssistant
 
             Categories option = Enum.Parse<Categories>(userInput);
 
-            switch (option)
+            var categoryActions = new Dictionary<Categories, (Type type, Action showMenu)>
             {
-                case Categories.Electronics:
-                    CategoryPicker.Electronics();
-                    break;
-                case Categories.Home:
-                    CategoryPicker.Home();
-                    break;
-                case Categories.Clothing:
-                    CategoryPicker.Clothing();
-                    break;
-                case Categories.Sports:
-                    CategoryPicker.Sports();
-                    break;
-                case Categories.Kitchen:
-                    CategoryPicker.Kitchen();
-                    break;
-                case Categories.Food:
-                    CategoryPicker.Food();
-                    break;
-            }
+            { Categories.Electronics, (typeof(ElectronicItem), MenuDisplay.ShowElectronicsMenu) },
+            { Categories.Home, (typeof(HomeItem), MenuDisplay.ShowHomeMenu) },
+            { Categories.Clothing, (typeof(ClothingItem), MenuDisplay.ShowClothingMenu) },
+            { Categories.Sports, (typeof(SportsItem), MenuDisplay.ShowSportsMenu) },
+            { Categories.Kitchen, (typeof(KitchenItem), MenuDisplay.ShowKitchenMenu) },
+            { Categories.Food, (typeof(FoodItem), MenuDisplay.ShowFoodMenu) }
+            };
+
+            CategoryPicker.Category(categoryActions[option].type, categoryActions[option].showMenu);
         }
         public static void HandleCartDisplay()
         {

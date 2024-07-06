@@ -15,12 +15,13 @@ namespace CartAssistant
         public IList<CartItem> itemsInCart = new List<CartItem>();
         public void Add(string name, int quantity)
         {
-            if (itemsInCart.Select(item => item.Name).Contains(name))
+            var result = itemsInCart.FirstOrDefault(CartItem => CartItem.Name == name);        
+            if (result == null)
             {
-                itemsInCart.FirstOrDefault(CartItem => CartItem.Name == name).Quantity += quantity;
+                itemsInCart.Add(new CartItem(name, quantity));
                 return;
             }
-            itemsInCart.Add(new CartItem(name, quantity));
+            result.Quantity += quantity;
         }
         public void Edit(int index, int quantity)
         {
